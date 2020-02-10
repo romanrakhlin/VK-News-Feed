@@ -4,4 +4,4 @@ This app shows News Feed from VK.
 
 # Screenshots
 
-![image](./image.jpeg)
+![image](./image.jpg)
