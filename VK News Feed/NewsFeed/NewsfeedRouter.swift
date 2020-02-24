@@ -15,7 +15,6 @@ protocol NewsfeedRoutingLogic {
 class NewsfeedRouter: NSObject, NewsfeedRoutingLogic {
 
   weak var viewController: NewsfeedViewController?
-  
+
   // MARK: Routing
-  
 }

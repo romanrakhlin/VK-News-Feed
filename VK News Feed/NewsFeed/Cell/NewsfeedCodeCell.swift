@@ -23,7 +23,7 @@ final class NewsfeedCodeCell: UITableViewCell {
     
     let cardView: UIView = {
        let view = UIView()
-        view.backgroundColor = #colorLiteral(red: 0.9999960065, green: 1, blue: 1, alpha: 1)
+        view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -39,6 +39,8 @@ final class NewsfeedCodeCell: UITableViewCell {
     let postlabel: UITextView = {
        let textView = UITextView()
         textView.font = Constants.postLabelFont
+        textView.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        textView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         textView.isScrollEnabled = false
         textView.isSelectable = true
         textView.isUserInteractionEnabled = true
@@ -87,7 +89,7 @@ final class NewsfeedCodeCell: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 14, weight: .medium)
         label.numberOfLines = 0
-        label.textColor = #colorLiteral(red: 0.227329582, green: 0.2323184013, blue: 0.2370472848, alpha: 1)
+        label.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         return label
     }()
     

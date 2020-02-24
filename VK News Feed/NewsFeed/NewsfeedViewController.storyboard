@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kod-1s-xOT">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uPg-Mk-BCF">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -8,19 +8,54 @@
     </dependencies>
     <scenes>
         <!--Newsfeed View Controller-->
-        <scene sceneID="McU-3O-rJ3">
+        <scene sceneID="mFz-l5-dMm">
             <objects>
-                <viewController id="kod-1s-xOT" customClass="NewsfeedViewController" customModule="VK_News_Feed" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="id0-JV-cLZ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                <viewController id="uPg-Mk-BCF" customClass="NewsfeedViewController" customModule="VK_News_Feed" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1nP-cz-N92">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="Zcw-hv-Rgk"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wJG-O4-Ssk" customClass="GradientView" customModule="VK_News_Feed" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" red="0.75686274509999996" green="0.34509803919999998" blue="0.34509803919999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                                        <color key="value" red="0.054625646331876387" green="0.35313231194366168" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                                        <color key="value" red="0.57495341298926439" green="0.41541766183678985" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="k2b-aI-EUO">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="uPg-Mk-BCF" id="Cnj-b6-nLJ"/>
+                                    <outlet property="delegate" destination="uPg-Mk-BCF" id="tFl-96-WDa"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="wJG-O4-Ssk" firstAttribute="bottom" secondItem="huZ-jB-aM6" secondAttribute="bottom" id="6rz-NO-Sqk"/>
+                            <constraint firstItem="huZ-jB-aM6" firstAttribute="bottom" secondItem="k2b-aI-EUO" secondAttribute="bottom" id="ALN-um-23h"/>
+                            <constraint firstItem="k2b-aI-EUO" firstAttribute="top" secondItem="1nP-cz-N92" secondAttribute="top" id="EFP-zx-hjQ"/>
+                            <constraint firstItem="wJG-O4-Ssk" firstAttribute="leading" secondItem="huZ-jB-aM6" secondAttribute="leading" id="FaK-Sn-iPg"/>
+                            <constraint firstItem="wJG-O4-Ssk" firstAttribute="top" secondItem="huZ-jB-aM6" secondAttribute="top" id="GBL-Pe-7pR"/>
+                            <constraint firstItem="wJG-O4-Ssk" firstAttribute="trailing" secondItem="huZ-jB-aM6" secondAttribute="trailing" id="Tqi-m6-RvB"/>
+                            <constraint firstItem="k2b-aI-EUO" firstAttribute="leading" secondItem="huZ-jB-aM6" secondAttribute="leading" id="W9o-Po-BQx"/>
+                            <constraint firstItem="huZ-jB-aM6" firstAttribute="trailing" secondItem="k2b-aI-EUO" secondAttribute="trailing" id="sqM-eC-peM"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="huZ-jB-aM6"/>
                     </view>
+                    <connections>
+                        <outlet property="table" destination="k2b-aI-EUO" id="zoB-2h-XJb"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jVy-Hd-LQl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1ur-wr-56O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="96" y="137"/>
+            <point key="canvasLocation" x="-58.399999999999999" y="137.18140929535232"/>
         </scene>
     </scenes>
 </document>
